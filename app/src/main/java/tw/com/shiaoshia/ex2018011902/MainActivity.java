@@ -139,13 +139,20 @@ public class MainActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
+            //第一頁position = 0
+            if(position == 1) {
+                //當position=1時，使用自己的FragmentA
+                return FragmentA.newInstance("AA","BB");
+            }
+
             return PlaceholderFragment.newInstance(position + 1);
         }
 
+        //TabItem數量,異動時這裡要改
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 3;
+            return 4;
         }
     }
 }
